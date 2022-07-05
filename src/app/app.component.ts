@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 interface SideNavToggle {
   screenWidth: number;
-  collapsed: boolean;
+  expanded: boolean;
 }
 
 @Component({
@@ -13,11 +13,11 @@ interface SideNavToggle {
 export class AppComponent {
   title = 'slide-bar-demo';
 
-  isSideNavCollapsed = false;
+  isSideNavExpanded = false;
   screenWidth = 0;
 
   onToggleSideNav(data: SideNavToggle): void {
-    this.isSideNavCollapsed = data.collapsed;
+    this.isSideNavExpanded = data.expanded;
     this.screenWidth = data.screenWidth;
   }
 }

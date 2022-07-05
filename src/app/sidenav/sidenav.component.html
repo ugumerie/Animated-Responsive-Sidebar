@@ -1,8 +1,8 @@
-<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+<div class="sidenav" [ngClass]="expanded ? 'sidenav-expanded' : ''">
     <div class="logo-container">
         <button class="logo" (click)="toggleCollapse()">A</button>
-        <div class="logo-text" @fadeInOut *ngIf="collapsed">Angular</div>
-        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+        <div class="logo-text" @fadeInOut *ngIf="expanded">Angular</div>
+        <button class="btn-close" @rotate *ngIf="expanded" (click)="closeSidenav()">
             <i class="fa fa-times close-icon"></i>
         </button>
     </div>
@@ -11,7 +11,7 @@
         <li class="sidenav-nav-item" *ngFor="let data of navData">
             <a class="sidenav-nav-link" [routerLink]="[data.routelink]" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
-                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="expanded">{{data.label}}</span>
             </a>
         </li>
     </ul>
