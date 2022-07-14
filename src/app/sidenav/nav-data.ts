@@ -1,4 +1,6 @@
-export const navbarData = [
+import { INavbarData } from "./helper";
+
+export const navbarData: INavbarData[] = [
     { 
         routelink: 'dashboard',
         icon: 'fa fa-home',
@@ -7,7 +9,37 @@ export const navbarData = [
     { 
         routelink: 'products',
         icon: 'fa fa-box-open',
-        label: 'Products'
+        label: 'Products',
+        items: [
+            { 
+                routelink: 'products/level1.1',
+                label: 'Level 1.1',
+                items: [
+                    { 
+                        routelink: 'products/level2.1',
+                        label: 'Level 2.1'
+                    },
+                    { 
+                        routelink: 'products/level2.2',
+                        label: 'Level 2.2',
+                        items: [
+                            { 
+                                routelink: 'products/level3.1',
+                                label: 'Level 3.1'
+                            },
+                            { 
+                                routelink: 'products/level3.2',
+                                label: 'Level 3.2'
+                            },
+                        ]
+                    },
+                ]
+            },
+            { 
+                routelink: 'products/level1.2',
+                label: 'Level 1.2'
+            },
+        ]
     },
     { 
         routelink: 'statistics',
@@ -17,7 +49,17 @@ export const navbarData = [
     { 
         routelink: 'coupons',
         icon: 'fa fa-tags',
-        label: 'Coupons'
+        label: 'Coupons',
+        items: [
+            { 
+                routelink: 'coupons/list',
+                label: 'List Coupons'
+            },
+            { 
+                routelink: 'coupons/create',
+                label: 'Create Coupons'
+            },
+        ]
     },
     { 
         routelink: 'pages',
@@ -32,6 +74,17 @@ export const navbarData = [
     { 
         routelink: 'settings',
         icon: 'fa fa-cog',
-        label: 'Settings'
+        label: 'Settings',
+        expanded: true,
+        items: [
+            { 
+                routelink: 'settings/profile',
+                label: 'Profile'
+            },
+            { 
+                routelink: 'settings/customize',
+                label: 'Customize'
+            },
+        ]
     },
 ]
