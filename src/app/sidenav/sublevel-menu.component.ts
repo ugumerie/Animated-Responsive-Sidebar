@@ -34,7 +34,7 @@ import { fadeInOut, INavbarData } from './helper';
       "
     >
       <li *ngFor="let item of data.items" class="sublevel-nav-item">
-        <!-- Inner sublevel -->
+        <!-- displays angle icon for when items array is populated -->
         <a
           class="sublevel-nav-link"
           *ngIf="item.items && item.items.length > 0"
@@ -54,7 +54,7 @@ import { fadeInOut, INavbarData } from './helper';
           ></i>
         </a>
 
-        <!-- Outer sublevel -->
+        <!-- items array is empty -->
         <a
           [routerLink]="[item.routelink]"
           routerLinkActive="active-sublevel"
